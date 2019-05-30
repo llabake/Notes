@@ -15,6 +15,8 @@ end
 SimpleCov.maximum_coverage_drop 5
 
 ENV['RAILS_ENV'] ||= 'test'
+# require database cleaner at the top level
+require 'database_cleaner'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -100,5 +102,5 @@ RSpec.configure do |config|
     end
   end
 
-  config.include RequestSpecHelper, type: :request
+  # config.include RequestSpecHelper, type: :request
 end

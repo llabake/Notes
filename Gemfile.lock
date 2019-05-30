@@ -242,6 +242,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   foreman (~> 0.82.0)
+  guard
   guard-rspec
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
