@@ -50,7 +50,10 @@ RSpec.describe "Notes API", type: :request do
   # Test suite for POST /notes
   describe "POST /notes" do
     # valid payload
-    let(:valid_attributes) { { title: "Learn JS", text: "JS is a must learn, well even ruby", category_id: category_id } }
+    let(:valid_attributes) do
+      { title: "Learn JS", text: "JS is a must learn,
+    well even ruby", category_id: category_id }
+    end
 
     context "when the request is valid" do
       before { post "/notes", params: valid_attributes }
@@ -73,7 +76,9 @@ RSpec.describe "Notes API", type: :request do
 
       it "returns a validation failure message" do
         expect(response.body).
-          to match(/Validation failed: Category must exist, Text can't be blank/)
+          to match(
+            /Validation failed: Category must exist, Text can't be blank/,
+          )
       end
     end
   end
